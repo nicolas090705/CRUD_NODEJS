@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            background: url(images/background.jpg) no-repeat center;
+            background-size: cover;
+            height: 100vh;
+            --def: #96B7C4;
+            --inv: #fff;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONSULTAR</title>
+
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="container">
+        <form action="/agregar" method="get" id="create">
+            <button class="btn waves-effect waves-light red darken-1" type="submit">
+                <i class='bx bx-plus-circle text-white bx-md'></i>  
+            </button>
+        </form>          
+    <table class="table table-bordered table-striped text-center mt-4">
+        <thead>
+            <tr class="bg-primary text-white">
+                <th scope="col">NOMBRE</th>
+                <th scope="col">PRECIO</th>
+                <th scope="col">DESCRIPCION</th>
+                <th scope="col">ACCION</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% result.forEach((user)=>{ %>
+            <tr>
+                <td class="text-white"><%= user.nombre %></td>
+                <td class="text-white"><%= user.precio %></td>
+                <td class="text-white"><%= user.descripcion %></td>
+                <td>
+                    <a href="/actualizar/<%= user.nombre %>" class="btn btn-outline-info">editar</a>
+                    <a href="/eliminar/<%= user.nombre %>" class="btn btn-outline-danger">borrar</a>
+                </td>
+            </tr>
+            <% }) %>
+        </tbody>
+    </table>
+    </div>
+       
+
+
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script> 
+</body>
+</html>
