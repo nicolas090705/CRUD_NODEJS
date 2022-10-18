@@ -23,7 +23,7 @@ var conexion = mysql.createConnection({
   host: 'localhost',
   database: 'node',
   user: 'root',
-  password:''
+  password:'n0m3l0'
 });
 
 conexion.connect(function(error){
